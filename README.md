@@ -76,3 +76,26 @@ Query_2: db.tweets.aggregate([{ $match: { polarity: 4 } },{$group:{_id: "$user",
 
 
 Output2: [{'count': 246, 'user': 'what_bugs_u'}]
+
+
+## Modeling
+
+Model | Atomicity | Sharding |Indexes |Large Number of Collections | Collection Contains Large Number of Small Documents
+----|:----:|:----:|:----:|:----:|:----:
+Arrays of Ancestors	|x|x||x||
+Materialized paths  |x |x ||x||x
+Nested sets			|||x||x|
+
+
+Arrays of Ancestors<br/>
+A single write operation modifies multiple documents (Atomicity)<br/>
+Sharding allows users to partition a collection within a database to distribute the collection’s documents across a number of mongod instances or shards. (Sharding)<br/>
+
+
+Materialized paths<br/>
+“Rolling up” these small documents into logical groupings means that queries to retrieve a group of documents involve sequential reads and fewer random disk accesses. Additionally, “rolling up” documents and moving common fields to the larger document benefit the index on these fields.(Collection Contains Large Number of Small Documents)<br/>
+
+
+Nested sets<br/>
+Use indexes to improve performance for common queries (Index)<br/>
+having a large number of collections has no significant performance penalty and results in very good performance. (Large Number of Collections)
