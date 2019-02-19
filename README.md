@@ -9,10 +9,6 @@ Make sure that you have MongoDB ready on Docker and already had database ready o
 For make to application run, you need python and some imports like pymongo and pprint.
 
 
-PS. 2 of queries do not work, because I don't know how to converte @ so python can understand it.
-But all queries have tested on Mongodb VM and worked.
-
-
 ## Questions
 ### How many Twitter users are in the database?
 
