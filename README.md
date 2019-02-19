@@ -6,7 +6,7 @@ Use jupyter notebook to open the file.
 Make sure that you have MongoDB ready on Docker and already had database ready on Docker.
 
 
-For make to application run, you need python and some imports like pymongo and pprint.
+For make the application to run, you also need python and some imports like pymongo and pprint.
 
 
 ## Questions
